@@ -1,0 +1,406 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#eaf8ff">
+  <meta name="description" content="초등학교 6학년 진로 발달 계획 세우기: 힌트와 함께 5개의 미래 계획을 쓰고 사과나무 보고서로 완성해요.">
+  <title>나의 진로 사과나무 | 실천 계획 세우기</title>
+  <style>
+    :root{font-family:"Pretendard","Apple SD Gothic Neo","Malgun Gothic",sans-serif;color:#26445d;background:#eaf8ff;--blue:#3b91d9;--blue-dark:#256bab;--sky:#eaf8ff;--mint:#e9f9ed;--apple:#fff8bc;--red:#eb8179;--ink:#29475f;--sub:#617a8e;--line:#c8e3f5}
+    *{box-sizing:border-box}
+    [hidden]{display:none!important}
+    body{margin:0;min-height:100vh;background:radial-gradient(ellipse at 10% 0%,#fff9e9 0%,transparent 25%),radial-gradient(ellipse at 95% 7%,#c9f2ff 0%,transparent 37%),linear-gradient(180deg,#e3f7ff,#f6fcff 63%,#e9f9f1);line-height:1.55}
+    button,input,textarea{font:inherit}
+    button{cursor:pointer}
+    button:focus-visible,input:focus-visible,textarea:focus-visible{outline:3px solid #f1a74d;outline-offset:3px}
+    .shell{width:min(1050px,calc(100% - 36px));margin:26px auto 55px}
+    .hero{position:relative;overflow:hidden;border:2px solid #bce4f7;border-radius:30px;background:linear-gradient(130deg,#fcffff 0%,#eaf8ff 60%,#d9f2ff 100%);padding:30px 34px 27px;box-shadow:0 12px 32px rgba(44,128,167,.10)}
+    .hero::after{content:"☁️";position:absolute;right:44px;top:18px;font-size:64px;opacity:.62;transform:rotate(-8deg)}
+    .hero-top{display:inline-flex;gap:7px;align-items:center;border-radius:999px;background:#e4f4ff;color:#3475a6;padding:6px 13px;font-size:13px;font-weight:900}
+    h1{font-size:clamp(27px,4.5vw,41px);line-height:1.22;letter-spacing:-1.8px;margin:13px 70px 9px 0;color:#246489}
+    .hero p{font-size:15px;color:#547e94;margin:0;max-width:730px}
+    .hero small{display:block;margin-top:10px;color:#68889b;font-weight:700}
+    .info-card,.main-card,.report-controls{border:1.6px solid var(--line);background:#fff;border-radius:25px;box-shadow:0 9px 25px rgba(48,117,160,.07)}
+    .info-card{margin-top:19px;padding:19px 24px}
+    .info-head{display:flex;justify-content:space-between;align-items:center;gap:13px;flex-wrap:wrap}
+    .info-card h2{font-size:16px;margin:0;color:#2c6993}
+    .info-card .mini{color:var(--sub);font-size:13px;margin:4px 0 0}
+    .profile-grid{display:grid;grid-template-columns:1fr 1fr;gap:13px;margin-top:14px}
+    .profile-grid label,.more-profile label{display:flex;flex-direction:column;gap:5px;font-size:13px;font-weight:800;color:#426980}
+    input[type=text]{width:100%;border:1.5px solid #d6e9f3;border-radius:13px;padding:11px 13px;background:#f8fcff;color:var(--ink);font-size:15px}
+    input::placeholder,textarea::placeholder{color:#91aab8}
+    details{margin-top:12px;padding:0 2px}
+    summary{font-size:13px;color:#367bb3;font-weight:800;cursor:pointer;width:max-content;max-width:100%}
+    .more-profile{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;padding-top:12px}
+    .progress-card{padding:21px 8px 11px}
+    .progress-line{display:flex;align-items:center;justify-content:space-between;gap:10px;margin:0 16px 13px}
+    .progress-line strong{font-size:16px;color:#2f6e97}
+    .progress-line span{font-size:13px;color:#5a879e;font-weight:800}
+    .meter{height:10px;border-radius:100px;background:#dbeef9;overflow:hidden;margin:0 16px 20px}
+    .meter-fill{height:100%;width:0;background:linear-gradient(90deg,#68c9a4,#60b3e8);transition:width .22s;border-radius:100px}
+    .steps{display:grid;grid-template-columns:repeat(5,1fr);gap:9px}
+    .step{position:relative;min-height:88px;border:2px solid #d5e7f4;background:#f8fcff;border-radius:17px;padding:10px 5px;color:#6a91a4;display:flex;align-items:center;flex-direction:column;justify-content:center;transition:.18s}
+    .step .fruit{font-size:23px;line-height:1.2}
+    .step span:last-child{font-size:13px;font-weight:900;margin-top:5px}
+    .step.is-current{border-color:#5aabe0;background:#e3f4ff;color:#2374ac;box-shadow:0 4px 0 #c0e7fa}
+    .step.is-done{border-color:#a6dcb9;background:#ecfaef;color:#347e5a}
+    .step.is-done::after{content:"✓";position:absolute;top:5px;right:9px;font-size:13px;color:#228c58;font-weight:900}
+    .main-card{margin-top:16px;padding:28px 34px 30px}
+    .stage-head{display:flex;gap:15px;align-items:center;margin-bottom:21px}
+    .stage-icon{width:59px;height:59px;border-radius:20px;background:#ffebc7;display:grid;place-items:center;font-size:35px;flex-shrink:0}
+    .stage-head .eyebrow{font-weight:900;font-size:13px;color:#5c91b3;margin:0}
+    .stage-head h2{font-size:25px;line-height:1.25;letter-spacing:-.7px;color:#2c7199;margin:2px 0 4px}
+    .stage-head .sub{color:#718b9c;font-size:14px;margin:0}
+    .field-grid{display:grid;grid-template-columns:1fr 1fr;gap:17px}
+    .field-card{border:1.5px solid #dcebf4;background:#fbfdff;border-radius:21px;padding:19px;min-width:0}
+    .field-card h3{display:flex;align-items:center;gap:8px;font-size:17px;color:#376988;margin:0 0 5px}
+    .field-card h3 .number{width:25px;height:25px;display:grid;place-items:center;border-radius:9px;background:#e8f4ff;color:#3c8bc4;font-size:14px}
+    .field-card .question{font-size:13px;color:#69879a;margin:0 0 11px}
+    textarea{width:100%;min-height:104px;resize:vertical;border-radius:15px;border:1.6px solid #cbdfea;background:#fff;color:#2c5266;padding:13px 14px;line-height:1.7;font-size:15px}
+    .count{text-align:right;font-size:11px;color:#83a0b1;margin:3px 2px 10px}
+    .hint-button{background:#fff9e6;color:#a46d25;border:1.5px solid #f2d99e;border-radius:13px;padding:10px 13px;font-size:13px;font-weight:900;min-height:43px}
+    .hint-button:hover{background:#fff1cb}
+    .hint-panel{background:#fffaf0;border:1.5px dashed #edcc85;border-radius:14px;margin-top:12px;padding:13px}
+    .hint-panel .hint-caption{display:flex;align-items:center;gap:5px;color:#a3742b;font-size:12px;font-weight:900;margin:0 0 8px}
+    .chips{display:flex;flex-wrap:wrap;gap:6px}
+    .chip{background:#fff;border:1px solid #edd59a;color:#815e28;border-radius:999px;padding:5px 10px;font-size:12px;font-weight:800}
+    .hint-text{font-size:13px;color:#77592e;margin:10px 0 8px;line-height:1.65}
+    .copy-example{border:1px solid #ecc786;border-radius:10px;background:#fff;color:#98692b;padding:7px 12px;font-size:12px;font-weight:900}
+    .tips{display:flex;align-items:flex-start;gap:9px;margin:19px 0 0;border-radius:14px;background:#eef9ff;padding:12px 15px;color:#567a95;font-size:13px}
+    .status{min-height:24px;margin:14px 0 0;font-size:13px;color:#a56348;font-weight:800}
+    .actions{display:flex;justify-content:space-between;gap:12px;margin-top:9px;flex-wrap:wrap}
+    .action-left,.action-right{display:flex;gap:9px;align-items:center;flex-wrap:wrap}
+    .btn{min-height:47px;border:0;border-radius:13px;padding:11px 19px;font-size:14px;font-weight:900;display:inline-flex;align-items:center;justify-content:center;gap:7px;transition:transform .12s,filter .12s}
+    .btn:hover{transform:translateY(-1px);filter:brightness(.98)}
+    .btn-primary{background:#4dabe4;color:#fff;box-shadow:0 4px 0 #2787c5}
+    .btn-outline{background:#eef8ff;border:1px solid #c9e4f7;color:#357bac}
+    .btn-soft{background:#fff;border:1px solid #d5e7f2;color:#66879e}
+    .btn-green{background:#4bad86;color:#fff;box-shadow:0 4px 0 #2b956d}
+    .footer{text-align:center;font-size:12px;color:#7193a6;margin:18px 0}
+    #resultView{margin-top:23px}
+    .report-controls{display:flex;align-items:center;gap:12px;justify-content:space-between;flex-wrap:wrap;padding:17px 20px;margin-bottom:17px}
+    .report-controls h2{font-size:19px;color:#337ca5;margin:0 0 2px}
+    .report-controls p{font-size:12px;color:#698ba3;margin:0}
+    .report-controls .control-actions{display:flex;flex-wrap:wrap;gap:8px}
+    .report-page{position:relative;margin:0 auto;width:min(100%,820px);min-height:1090px;overflow:hidden;border-radius:11px;background:#f4fcfa;border:1px solid #d6e9e4;box-shadow:0 14px 35px rgba(55,111,120,.12);isolation:isolate}
+    .report-top{position:relative;z-index:2;display:flex;align-items:flex-start;justify-content:space-between;gap:10px;padding:30px 35px 12px}
+    .report-top .r-tag{display:inline-block;background:#e4f6ff;color:#437c98;border-radius:999px;padding:4px 11px;font-size:11px;font-weight:900}
+    .report-top h2{font-size:31px;letter-spacing:-1.6px;line-height:1.25;margin:8px 0 5px;color:#337f81}
+    .report-top p{font-size:12px;margin:0;color:#658889}
+    .report-top .r-stamp{font-size:51px;transform:rotate(12deg)}
+    .report-profile{position:relative;z-index:2;display:flex;flex-wrap:wrap;gap:7px 15px;margin:0 35px 7px;padding:11px 15px;border-radius:13px;background:rgba(255,255,255,.87);border:1px solid #d5e9e4;font-size:12px;color:#527d7a}
+    .report-profile b{color:#2d646a}
+    .tree-scene{position:relative;min-height:830px;isolation:isolate}
+    .tree-art{position:absolute;inset:0;width:100%;height:100%;z-index:-1;pointer-events:none}
+    .apple-grid{position:relative;z-index:1;display:grid;grid-template-columns:1fr 1fr;grid-template-rows:repeat(3,250px);gap:6px 10px;padding:14px 30px 15px}
+    .apple-card{position:relative;min-width:0;display:flex;align-items:center;justify-content:center;filter:drop-shadow(1px 5px 0 rgba(39,107,73,.13))}
+    .apple-card:nth-child(5){grid-column:1/-1;justify-self:center;width:min(100%,390px)}
+    .apple-drawing{position:absolute;inset:0;width:100%;height:100%}
+    .apple-leaf{fill:#79b66f;stroke:#4a8e65;stroke-width:4}
+    .apple-stem{fill:none;stroke:#755d41;stroke-width:9;stroke-linecap:round}
+    .apple-body{fill:#fff7bd;stroke:#e9877b;stroke-width:10}
+    .apple-inner{position:relative;z-index:1;width:77%;max-width:325px;padding:30px 7px 12px;text-align:center}
+    .apple-title{display:inline-block;color:#9b594c;font-weight:900;font-size:15px;background:#fff9df;border:1px solid #eec6a1;padding:3px 13px;border-radius:99px;margin:0 0 7px}
+    .apple-section{text-align:left;margin:3px 0 6px}
+    .apple-section strong{display:block;font-size:11px;color:#9b6660;margin:0 0 1px}
+    .apple-section .apple-content{font-size:12px;line-height:1.3;white-space:pre-wrap;overflow-wrap:anywhere;color:#414b47;min-height:30px}
+    .report-bottom{position:relative;z-index:1;margin:0 auto 23px;width:calc(100% - 70px);text-align:center;border-radius:15px;background:#fffef1;color:#54756d;padding:12px 10px;font-size:13px;font-weight:800;border:1px solid #ecf1d0}
+    .report-footnote{font-size:11px;color:#849a94;text-align:center;margin-bottom:14px}
+    .privacy-note{font-size:12px;color:#7193a6;text-align:center;margin:15px 0 0}
+    @media(max-width:680px){.shell{width:min(100% - 20px,1050px);margin-top:10px}.hero{padding:22px 20px}.hero::after{font-size:35px;right:11px;top:10px}.hero h1{margin-right:25px}.info-card{padding:17px}.more-profile{grid-template-columns:1fr}.main-card{padding:20px 16px}.field-grid{grid-template-columns:1fr}.stage-head h2{font-size:22px}.step{min-height:70px}.step .fruit{font-size:19px}.step span:last-child{font-size:11px}.steps{gap:4px}.report-page{min-height:auto}.report-top{padding:19px 17px 10px}.report-top h2{font-size:24px}.report-profile{margin:0 15px 5px}.apple-grid{grid-template-rows:repeat(3,minmax(225px,auto));gap:0;padding:8px 9px}.apple-card{min-height:225px}.apple-card:nth-child(5){width:min(100%,345px)}.apple-inner{width:80%;padding:18px 0 10px}.apple-title{font-size:12px}.apple-section strong{font-size:10px}.apple-section .apple-content{font-size:10px;line-height:1.3}.tree-scene{min-height:auto}.report-bottom{width:calc(100% - 28px);font-size:12px}.report-controls{padding:14px}}
+    @media(max-width:425px){.apple-grid{grid-template-columns:1fr;grid-template-rows:none}.apple-card,.apple-card:nth-child(5){width:min(100%,345px);max-width:345px;justify-self:center;min-height:245px;grid-column:1}.apple-card:nth-child(5){grid-column:1}.apple-inner{width:77%}.apple-section .apple-content{font-size:12px}.apple-title{font-size:14px}.tree-art{display:none}.tree-scene{background:radial-gradient(ellipse at center,#dff5de 0,#f4fcfa 67%)}}
+    @page{size:A4 portrait;margin:0}
+    @media print{
+      :root{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+      html,body{width:210mm;height:297mm;margin:0;padding:0;background:#fff!important}
+      .shell{width:auto;margin:0;max-width:none}
+      .hero,.info-card,.progress-card,.main-card,.report-controls,.footer,.privacy-note{display:none!important}
+      #resultView{display:block!important;margin:0!important}
+      .report-page{width:210mm;height:297mm;min-height:297mm;border:none;border-radius:0;box-shadow:none;overflow:hidden;break-inside:avoid}
+      .report-top{padding:10mm 12mm 3mm}
+      .report-top h2{font-size:25pt;margin:2mm 0 1mm}
+      .report-top p{font-size:10pt}
+      .report-top .r-tag{font-size:9pt}
+      .report-profile{margin:0 12mm 0;padding:3mm 4mm;font-size:9.4pt}
+      .tree-scene{height:226mm;min-height:226mm}
+      .apple-grid{grid-template-rows:repeat(3,66mm);padding:1mm 8mm 0;gap:2mm 0}
+      .apple-card:nth-child(5){width:98mm}
+      .apple-title{font-size:11pt;margin-bottom:2mm;padding:1mm 4mm}
+      .apple-inner{width:76%;padding:8mm 0 3mm}
+      .apple-section{margin:1mm 0 1.5mm}
+      .apple-section strong{font-size:9pt;margin-bottom:.5mm}
+      .apple-section .apple-content{font-size:9.5pt;line-height:1.3;min-height:9mm}
+      .report-bottom{position:absolute;bottom:3mm;left:12mm;width:186mm;margin:0;padding:2.5mm;font-size:9.5pt}
+      .report-footnote{display:none}
+    }
+    @media(prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
+  </style>
+</head>
+<body>
+  <main class="shell">
+    <header class="hero" id="appTop">
+      <div class="hero-top">🌱 6학년 실과 · 3단계 실천 계획 세우기</div>
+      <h1>나의 진로 사과나무 🍎</h1>
+      <p>지금의 나부터 25년 뒤의 나까지, 다섯 개의 사과에 꿈과 실천을 담아 보아요!</p>
+      <small>💡 정답은 없어요. 미래의 계획은 언제든 바뀔 수 있고, 나만의 속도로 성장하면 돼요.</small>
+    </header>
+
+    <section class="info-card" id="infoCard" aria-label="나의 진로 탐색 결과">
+      <div class="info-head">
+        <div><h2>📝 먼저 나에 대해 적어 볼까요? <span style="font-size:12px;font-weight:700;color:#82a1b1">(선택)</span></h2>
+        <p class="mini">앞에서 탐색한 내용을 떠올려 보세요. 비워 두어도 계획을 쓸 수 있어요.</p></div>
+      </div>
+      <div class="profile-grid">
+        <label>이름 또는 별명 <input id="studentName" type="text" maxlength="15" autocomplete="off" placeholder="예: 하늘이"></label>
+        <label>관심 직업 <input id="dreamJob" type="text" maxlength="30" autocomplete="off" placeholder="예: 동물 보호 활동가"></label>
+      </div>
+      <details><summary>✨ 흥미 · 적성 · 성격 결과도 보고서에 넣을래요!</summary>
+        <div class="more-profile">
+          <label>흥미 유형 <input id="interest" type="text" maxlength="18" autocomplete="off" placeholder="예: 탐구형"></label>
+          <label>적성의 강점 <input id="aptitude" type="text" maxlength="22" autocomplete="off" placeholder="예: 공간 감각"></label>
+          <label>성격의 특징 <input id="personality" type="text" maxlength="22" autocomplete="off" placeholder="예: 차분하고 꼼꼼함"></label>
+        </div>
+      </details>
+    </section>
+
+    <section class="progress-card" id="progressView" aria-label="진로 계획 진행 상황">
+      <div class="progress-line"><strong>🍏 사과 5개 채우기</strong><span id="completedCount">0 / 5개 완성</span></div>
+      <div class="meter" aria-label="전체 진행률"><div class="meter-fill" id="progressFill"></div></div>
+      <nav class="steps" aria-label="시기 선택">
+        <button class="step is-current" data-step="0" type="button"><span class="fruit">🍏</span><span>현재</span></button>
+        <button class="step" data-step="1" type="button"><span class="fruit">🍎</span><span>10년 뒤</span></button>
+        <button class="step" data-step="2" type="button"><span class="fruit">🍎</span><span>15년 뒤</span></button>
+        <button class="step" data-step="3" type="button"><span class="fruit">🍎</span><span>20년 뒤</span></button>
+        <button class="step" data-step="4" type="button"><span class="fruit">🍎</span><span>25년 뒤</span></button>
+      </nav>
+    </section>
+
+    <section class="main-card" id="writeView" aria-label="진로 계획 쓰기">
+      <div class="stage-head">
+        <div class="stage-icon" id="stageIcon">🌱</div>
+        <div><p class="eyebrow" id="stageNumber">사과 1 / 5</p><h2 id="stageTitle">현재의 나</h2><p class="sub" id="stageDescription">지금 당장 시작할 수 있는 일을 생각해 보세요.</p></div>
+      </div>
+      <div class="field-grid">
+        <section class="field-card" aria-labelledby="planLabel">
+          <h3 id="planLabel"><span class="number">1</span> 나의 계획</h3>
+          <p class="question">이 시기에 나는 어떤 모습으로 성장하고 싶나요?</p>
+          <textarea id="planText" rows="2" maxlength="42" placeholder="나의 생각을 1~2줄로 적어 보세요." aria-label="나의 계획"></textarea>
+          <div class="count" id="planCount">0 / 42자</div>
+          <button class="hint-button" id="planHintButton" type="button" aria-expanded="false" aria-controls="planHintPanel">💡 키워드 힌트 보기</button>
+          <div class="hint-panel" id="planHintPanel" hidden></div>
+        </section>
+        <section class="field-card" aria-labelledby="actionLabel">
+          <h3 id="actionLabel"><span class="number">2</span> 이루기 위해 해야 할 일</h3>
+          <p class="question">그 계획에 다가가려면 어떤 작은 행동을 해 볼까요?</p>
+          <textarea id="actionText" rows="2" maxlength="42" placeholder="실천할 일을 1~2줄로 적어 보세요." aria-label="이루기 위해 해야 할 일"></textarea>
+          <div class="count" id="actionCount">0 / 42자</div>
+          <button class="hint-button" id="actionHintButton" type="button" aria-expanded="false" aria-controls="actionHintPanel">💡 키워드 힌트 보기</button>
+          <div class="hint-panel" id="actionHintPanel" hidden></div>
+        </section>
+      </div>
+      <div class="tips"><span>🐣</span><span>처음부터 멋진 문장을 쓸 필요는 없어요! <b>키워드 → 더 많은 키워드 → 문장 예시</b> 순서로 도움을 받을 수 있어요. 예시 문장은 나에게 맞게 바꿔 써도 좋아요.</span></div>
+      <div class="status" id="stageStatus" role="status" aria-live="polite"></div>
+      <div class="actions">
+        <div class="action-left"><button id="prevButton" class="btn btn-soft" type="button">← 이전 사과</button></div>
+        <div class="action-right"><button id="resetButton" class="btn btn-outline" type="button">처음부터 다시</button><button id="nextButton" class="btn btn-primary" type="button">다음 사과 →</button></div>
+      </div>
+    </section>
+
+    <section id="resultView" hidden aria-label="완성된 나의 진로 사과나무 보고서">
+      <div class="report-controls">
+        <div><h2>🎉 사과나무 완성!</h2><p>한 장에 나의 진로 계획을 담았어요. 인쇄하거나 PDF로 저장할 수 있어요.</p></div>
+        <div class="control-actions"><button id="editButton" class="btn btn-outline" type="button">✏️ 다시 고치기</button><button id="printButton" class="btn btn-green" type="button">🖨️ 인쇄 · PDF 저장</button></div>
+      </div>
+      <div class="report-page" id="reportPage">
+        <div class="report-top"><div><span class="r-tag">3단계 · 실천 계획 세우기</span><h2>나의 진로 사과나무 🍎</h2><p>다섯 개의 사과에 담은 나의 꿈과 작은 실천</p></div><div class="r-stamp" aria-hidden="true">🐰</div></div>
+        <div class="report-profile" id="reportProfile"></div>
+        <div class="tree-scene">
+          <svg class="tree-art" viewBox="0 0 820 840" preserveAspectRatio="none" aria-hidden="true">
+            <path d="M340 838 C359 718 366 590 356 451 C305 395 236 380 149 362 L161 339 C258 356 323 380 368 416 C387 303 367 213 356 155 L418 150 C428 269 421 351 422 437 C459 390 541 350 667 350 L659 378 C537 384 458 426 429 487 C434 593 457 729 486 838 Z" fill="#a57953"/>
+            <ellipse cx="404" cy="361" rx="362" ry="305" fill="#d3efd2"/>
+            <ellipse cx="224" cy="252" rx="205" ry="205" fill="#c2e8c0"/>
+            <ellipse cx="572" cy="247" rx="202" ry="195" fill="#c0e7c1"/>
+            <ellipse cx="365" cy="191" rx="234" ry="175" fill="#cfefcc"/>
+            <ellipse cx="601" cy="452" rx="154" ry="153" fill="#c6e9bf"/>
+            <ellipse cx="184" cy="450" rx="158" ry="170" fill="#c9edcb"/>
+            <path d="M0 799 C160 752 229 784 332 791 C483 766 627 747 820 789 L820 840 L0 840Z" fill="#c4e9c1"/>
+            <g fill="#93cd98" opacity=".8"><ellipse cx="95" cy="307" rx="17" ry="9" transform="rotate(-40 95 307)"/><ellipse cx="695" cy="228" rx="19" ry="10" transform="rotate(38 695 228)"/><ellipse cx="426" cy="34" rx="22" ry="10" transform="rotate(30 426 34)"/><ellipse cx="132" cy="560" rx="18" ry="9" transform="rotate(40 132 560)"/><ellipse cx="706" cy="544" rx="16" ry="9" transform="rotate(-35 706 544)"/></g>
+          </svg>
+          <div class="apple-grid" id="appleGrid"></div>
+          <div class="report-bottom">🌟 미래는 달라질 수 있어요. 오늘의 작은 실천부터 시작해요!</div>
+        </div>
+        <p class="report-footnote">나의 미래를 상상하고, 나만의 속도로 꿈을 키워 가요.</p>
+      </div>
+      <p class="privacy-note">🔒 작성 내용은 서버로 전송되지 않아요. 이 기기에만 자동 저장되므로 공용 컴퓨터에서는 사용 후 ‘처음부터 다시’를 눌러 주세요.</p>
+    </section>
+    <div class="footer" id="footerNote">☁️ 나와 친구의 꿈을 모두 존중해요. 한 가지 직업만 정해야 하는 것은 아니에요.</div>
+  </main>
+
+  <script>
+    'use strict';
+    const STORAGE_KEY = 'career_apple_tree_v1';
+    const MAX_LENGTH = 42;
+    const stages = [
+      {label:'현재',title:'현재의 나',desc:'지금 당장 시작할 수 있는 일을 생각해 보세요.',icon:'🌱',
+       plan:{first:['좋아하는 것','나의 장점','관심 직업'],extra:['흥미 검사 결과','잘하는 일 찾기','다양한 직업 알아보기','나를 더 이해하기'],example:'내가 좋아하고 잘하는 일을 더 알아보고 관심 직업을 찾아보겠다.'},
+       action:{first:['책·영상 찾아보기','직접 체험하기','질문하기'],extra:['일주일에 한 번 조사하기','새로운 활동에 도전하기','배운 점 기록하기','주변 사람과 이야기하기'],example:'매주 관심 있는 직업을 하나씩 찾아보고 배운 점을 기록하겠다.'}},
+      {label:'10년 뒤',title:'10년 뒤의 나',desc:'조금 더 자란 나는 무엇을 배우고 경험하고 있을까요?',icon:'🎒',
+       plan:{first:['관심 분야 배우기','새로운 경험','진로 방향'],extra:['여러 분야 탐색하기','나만의 강점 찾기','꿈과 연결된 공부','다양한 길 알아보기'],example:'관심 있는 분야를 배우고 여러 경험을 하며 나에게 맞는 진로를 찾아가겠다.'},
+       action:{first:['필요한 공부','경험 쌓기','꾸준한 연습'],extra:['관련 수업 찾아보기','기초 기술 익히기','활동 후 기록 남기기','새로운 도전 이어 가기'],example:'관심 분야의 기초를 공부하고 다양한 활동에 참여하며 경험을 쌓겠다.'}},
+      {label:'15년 뒤',title:'15년 뒤의 나',desc:'좋아하는 분야에서 어떤 강점을 키우고 싶나요?',icon:'🌼',
+       plan:{first:['실력 키우기','나만의 강점','의미 있는 일'],extra:['배운 것 활용하기','관심 분야 도전하기','함께 성장하기','새로운 목표 정하기'],example:'관심 분야의 실력을 쌓아 내가 원하는 일을 할 준비를 하겠다.'},
+       action:{first:['꾸준히 연습','협력하기','배움 이어 가기'],extra:['새로운 경험에 참여하기','필요한 능력 익히기','잘하는 사람에게 배우기','스스로 점검하기'],example:'필요한 능력을 꾸준히 연습하고 주변 사람들과 협력하며 경험을 쌓겠다.'}},
+      {label:'20년 뒤',title:'20년 뒤의 나',desc:'일과 생활에서 어떤 가치를 소중히 여기고 싶나요?',icon:'🌈',
+       plan:{first:['일하며 성장하기','보람 느끼기','균형 잡힌 생활'],extra:['좋아하는 분야에서 활동하기','사람들과 협력하기','새로운 일 배우기','건강하게 생활하기'],example:'내가 선택한 분야에서 보람을 느끼며 일하고 꾸준히 성장하겠다.'},
+       action:{first:['책임감','새로운 배움','협력'],extra:['맡은 일 성실히 하기','다른 사람의 생각 듣기','휴식과 건강 돌보기','작은 목표 실천하기'],example:'새로운 것을 배우고 주변 사람들과 협력하며 맡은 일을 성실히 하겠다.'}},
+      {label:'25년 뒤',title:'25년 뒤의 나',desc:'어떤 어른으로 살아가고 싶은지 자유롭게 상상해 보세요.',icon:'🌳',
+       plan:{first:['새로운 목표','행복한 생활','사회에 도움'],extra:['꿈을 계속 키우기','경험 나누기','즐겁게 배우기','나와 주변을 돌보기'],example:'내가 하는 일에서 보람을 느끼고 새로운 목표에도 꾸준히 도전하겠다.'},
+       action:{first:['계속 배우기','경험 나누기','작은 실천'],extra:['새로운 목표 세우기','주변 사람 돕기','건강 돌보기','관심 분야 탐색하기'],example:'배움을 이어 가고 나의 경험을 다른 사람들과 나누며 건강하게 생활하겠다.'}}
+    ];
+    const $ = (id)=>document.getElementById(id);
+    const profileKeys=['studentName','dreamJob','interest','aptitude','personality'];
+    const emptyAnswers=()=>stages.map(()=>({plan:'',action:''}));
+    let saved=null;
+    try { saved=JSON.parse(localStorage.getItem(STORAGE_KEY)||'null'); } catch { /* 저장 기능을 이용할 수 없는 환경도 지원 */ }
+    const data={
+      profile:Object.fromEntries(profileKeys.map(k=>[k,typeof saved?.profile?.[k]==='string'?saved.profile[k]:''])),
+      answers:stages.map((_,i)=>({plan:typeof saved?.answers?.[i]?.plan==='string'?saved.answers[i].plan.slice(0,MAX_LENGTH):'',action:typeof saved?.answers?.[i]?.action==='string'?saved.answers[i].action.slice(0,MAX_LENGTH):''}))
+    };
+    let current=0;
+    const hintLevels=stages.map(()=>({plan:0,action:0}));
+    const forbiddenPatterns=[/씨발|시발|ㅅㅂ|병신|ㅂㅅ|개새끼|좆|지랄|야동|섹스|몰카|성추행|성폭행|마약|살인|자살|죽여|도박|폭탄|사기꾼/iu];
+    const inappropriate=(value)=>forbiddenPatterns.some(pattern=>pattern.test(value));
+    function safeStorage(){try{localStorage.setItem(STORAGE_KEY,JSON.stringify(data))}catch{/* 기기에서 저장이 차단된 경우에도 작성은 가능 */}}
+    function showMessage(s){$('stageStatus').textContent=s||''}
+    function completed(i){return data.answers[i].plan.trim().length>0&&data.answers[i].action.trim().length>0&&!inappropriate(data.answers[i].plan)&&!inappropriate(data.answers[i].action)}
+    function updateProgress(){
+      const n=stages.filter((_,i)=>completed(i)).length;
+      $('completedCount').textContent=`${n} / 5개 완성`;
+      $('progressFill').style.width=`${n*20}%`;
+      document.querySelectorAll('[data-step]').forEach((b,i)=>{
+        b.classList.toggle('is-current',i===current);
+        b.classList.toggle('is-done',completed(i));
+        b.setAttribute('aria-current',i===current?'step':'false');
+        b.querySelector('.fruit').textContent=completed(i)?'🍎':'🍏';
+      });
+    }
+    function updateCounters(){for(const type of ['plan','action']){$(type+'Count').textContent=`${$(type+'Text').value.length} / ${MAX_LENGTH}자`}}
+    function makeChip(text){const el=document.createElement('span');el.className='chip';el.textContent=text;return el}
+    function renderHint(type){
+      const level=hintLevels[current][type];
+      const panel=$(type+'HintPanel');const btn=$(type+'HintButton');
+      panel.replaceChildren();panel.hidden=level===0;
+      btn.setAttribute('aria-expanded',String(level>0));
+      if(level===0){btn.textContent='💡 키워드 힌트 보기';return}
+      const detail=stages[current][type];
+      const caption=document.createElement('p');caption.className='hint-caption';caption.textContent=level===1?'💡 이 단어들로 시작해 볼까요?':level===2?'💡 이런 표현도 떠올려 보세요!':'💛 문장이 떠오르지 않으면 예시를 살펴봐요.';
+      panel.append(caption);
+      const chips=document.createElement('div');chips.className='chips';
+      const extra=type==='plan'&&data.profile.dreamJob.trim()&&!inappropriate(data.profile.dreamJob)?[`관심 직업: ${data.profile.dreamJob.trim()}`]:[];
+      const terms=level===1?[...detail.first,...extra]:[...detail.first,...detail.extra,...extra];
+      terms.forEach(t=>chips.append(makeChip(t)));panel.append(chips);
+      if(level===3){
+        const p=document.createElement('p');p.className='hint-text';p.textContent=`문장 예시: “${detail.example}”`;panel.append(p);
+        const copy=document.createElement('button');copy.type='button';copy.className='copy-example';copy.textContent='✏️ 이 문장으로 시작하기';
+        copy.addEventListener('click',()=>{
+          $(type+'Text').value=detail.example.slice(0,MAX_LENGTH);
+          data.answers[current][type]=$(type+'Text').value;
+          updateCounters();updateProgress();safeStorage();showMessage('예시 문장을 넣었어요. 나에게 맞게 자유롭게 고쳐 보세요!');
+          $(type+'Text').focus();
+        });panel.append(copy);
+      }
+      btn.textContent=level===1?'🤔 키워드 더 보기':level===2?'📝 완성 문장 예시 보기':'🔁 처음 힌트부터 보기';
+    }
+    function showStage(index,{scroll=false}={}){
+      current=Math.max(0,Math.min(index,stages.length-1));
+      const stage=stages[current];
+      $('stageNumber').textContent=`사과 ${current+1} / 5`;
+      $('stageTitle').textContent=stage.title;
+      $('stageDescription').textContent=stage.desc;
+      $('stageIcon').textContent=stage.icon;
+      $('planText').value=data.answers[current].plan;
+      $('actionText').value=data.answers[current].action;
+      updateCounters();updateProgress();
+      for(const type of ['plan','action'])renderHint(type);
+      $('prevButton').disabled=current===0;
+      $('prevButton').style.opacity=current===0?'.48':'1';
+      $('nextButton').textContent=current===4?'🍎 사과나무 보고서 완성하기':'다음 사과 →';
+      showMessage('');
+      if(scroll) $('progressView').scrollIntoView({behavior:'smooth',block:'start'});
+    }
+    function validateStage(i){
+      for(const type of ['plan','action']){
+        const value=data.answers[i][type].trim();
+        if(!value){showMessage(type==='plan'?'먼저 ‘나의 계획’을 한 줄이라도 적어 보세요.':'‘이루기 위해 해야 할 일’도 한 줄 적어 보세요.');$(type+'Text').focus();return false}
+        if(inappropriate(value)){showMessage('친구들과 함께 볼 수 있는 긍정적이고 서로 존중하는 표현으로 바꾸어 주세요.');$(type+'Text').focus();return false}
+      }
+      return true;
+    }
+    function makeSvg(tag,attrs){const el=document.createElementNS('http://www.w3.org/2000/svg',tag);for(const [k,v] of Object.entries(attrs))el.setAttribute(k,v);return el}
+    function appendApple(index){
+      const card=document.createElement('article');card.className='apple-card';
+      const svg=makeSvg('svg',{viewBox:'0 0 400 280',preserveAspectRatio:'none',class:'apple-drawing','aria-hidden':'true'});
+      svg.append(
+        makeSvg('path',{d:'M 203 60 C 200 45 205 26 218 13',class:'apple-stem'}),
+        makeSvg('path',{d:'M218 38 C246 8 277 15 286 22 C269 51 239 60 218 38Z',class:'apple-leaf'}),
+        makeSvg('path',{d:'M199 57 C166 24 101 23 65 55 C18 94 20 159 53 217 C85 272 141 270 199 254 C250 276 310 263 344 215 C377 163 380 96 334 55 C293 24 229 26 199 57Z',class:'apple-body'})
+      );card.append(svg);
+      const inner=document.createElement('div');inner.className='apple-inner';
+      const title=document.createElement('div');title.className='apple-title';title.textContent=stages[index].label;inner.append(title);
+      const labels=[['plan','나의 계획'],['action','이루기 위해 해야 할 일']];
+      for(const [type,label] of labels){
+        const sec=document.createElement('div');sec.className='apple-section';
+        const strong=document.createElement('strong');strong.textContent='• '+label;
+        const p=document.createElement('div');p.className='apple-content';p.textContent=data.answers[index][type].trim();
+        sec.append(strong,p);inner.append(sec);
+      }
+      card.append(inner);return card;
+    }
+    function renderReport(){
+      const out=$('reportProfile');out.replaceChildren();
+      const profile=[['이름',data.profile.studentName],['관심 직업',data.profile.dreamJob],['흥미',data.profile.interest],['적성',data.profile.aptitude],['성격',data.profile.personality]].filter(x=>x[1].trim()&&!inappropriate(x[1]));
+      if(!profile.length){const p=document.createElement('span');p.textContent='이름: ____________________   |   나만의 꿈을 차근차근 키워 가요!';out.append(p)}
+      for(const [key,value] of profile){const span=document.createElement('span');const b=document.createElement('b');b.textContent=key+'  ';span.append(b,document.createTextNode(value.trim()));out.append(span)}
+      $('appleGrid').replaceChildren(...stages.map((_,i)=>appendApple(i)));
+    }
+    function showReport(){
+      for(let i=0;i<stages.length;i++){if(!completed(i)){showStage(i);$('resultView').hidden=true;$('writeView').hidden=false;$('progressView').hidden=false;showMessage('아직 채우지 않은 사과가 있어요. 두 칸을 작성하면 보고서를 완성할 수 있어요!');return}}
+      for(const k of profileKeys){if(inappropriate(data.profile[k])){showMessage('내 정보에도 친구들과 함께 볼 수 있는 바른 표현을 적어 주세요.');$('infoCard').scrollIntoView({behavior:'smooth'});return}}
+      renderReport();$('resultView').hidden=false;$('writeView').hidden=true;$('progressView').hidden=true;
+      $('resultView').scrollIntoView({behavior:'smooth',block:'start'});
+    }
+    profileKeys.forEach(k=>{
+      $(k).value=data.profile[k];
+      $(k).addEventListener('input',()=>{data.profile[k]=$(k).value;safeStorage();if(k==='dreamJob')for(const type of ['plan','action'])renderHint(type)});
+    });
+    for(const type of ['plan','action']){
+      $(type+'Text').addEventListener('input',()=>{
+        data.answers[current][type]=$(type+'Text').value;
+        updateCounters();updateProgress();safeStorage();showMessage('');
+      });
+      $(type+'HintButton').addEventListener('click',()=>{
+        hintLevels[current][type]=(hintLevels[current][type]+1)%4;
+        renderHint(type);
+      });
+    }
+    document.querySelectorAll('[data-step]').forEach(button=>button.addEventListener('click',()=>showStage(Number(button.dataset.step))));
+    $('prevButton').addEventListener('click',()=>showStage(current-1,{scroll:true}));
+    $('nextButton').addEventListener('click',()=>{
+      if(!validateStage(current))return;
+      if(current<4)showStage(current+1,{scroll:true});else showReport();
+    });
+    $('editButton').addEventListener('click',()=>{$('resultView').hidden=true;$('writeView').hidden=false;$('progressView').hidden=false;showStage(current,{scroll:true})});
+    $('printButton').addEventListener('click',()=>window.print());
+    $('resetButton').addEventListener('click',()=>{
+      if(!window.confirm('작성한 모든 계획과 내 정보를 지우고 처음부터 시작할까요?'))return;
+      data.answers=emptyAnswers();profileKeys.forEach(k=>{data.profile[k]='';$(k).value=''});
+      hintLevels.forEach(x=>{x.plan=0;x.action=0});
+      try{localStorage.removeItem(STORAGE_KEY)}catch{}
+      $('resultView').hidden=true;$('writeView').hidden=false;$('progressView').hidden=false;
+      showStage(0,{scroll:true});
+    });
+    showStage(0);
+  </script>
+</body>
+</html>
